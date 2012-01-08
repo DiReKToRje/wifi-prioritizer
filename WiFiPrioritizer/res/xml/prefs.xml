@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory>
+	    <ListPreference 
+	        android:title="Default WiFi Network"
+	        android:summary="Allows to select the default WiFi Network that application will try to connect as soon as it is available"
+	        android:key="defaultWifiPref" />
+	    
+	    <ListPreference 
+	        android:title="Minimal WiFi Strength to reconnect"
+	        android:summary="Allows to select the minimal signal strength of the WiFi Network to try to connect"
+	        android:key="minWifiSignalLevelPref"
+	        android:defaultValue="-70"
+	        android:entries="@array/minWifiSignalLevelPref_entries"
+	        android:entryValues="@array/minWifiSignalLevelPref_entryValues" />
+	</PreferenceCategory>
+</PreferenceScreen>

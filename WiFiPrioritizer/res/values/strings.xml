@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main strings -->
+    <string name="app_name">WiFiWidgets</string>
+    
+    <!-- Activities titles -->
+    <string name="wiFiPrioritizerActivityTitle">WiFiWidgets</string>
+    <string name="prefsActivityTitle">Preferences</string>
+
+    <!-- Menu -->
+    <string name="menu_prefsActivity">Preferences</string>
+    
+    <!-- Views -->
+    <string name="reconnect">Reconnect wifi</string>
+    
+</resources>
