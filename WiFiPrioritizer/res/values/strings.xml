@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main strings -->
-    <string name="app_name">WiFiWidgets</string>
+    <string name="app_name">WiFi Prioritizer</string>
     
     <!-- Activities titles -->
-    <string name="wiFiPrioritizerActivityTitle">WiFiWidgets</string>
+    <string name="wiFiPrioritizerActivityTitle">WiFi Prioritizer</string>
     <string name="prefsActivityTitle">Preferences</string>
 
     <!-- Menu -->
+    <string name="menu_serviceStart">Start Service</string>
+    <string name="menu_serviceStop">Stop Service</string>
     <string name="menu_prefsActivity">Preferences</string>
     
     <!-- Views -->
-    <string name="reconnect">Reconnect wifi</string>
+    <string name="label_connectedNetwork">Connected Network:</string>
+    <string name="label_serviceStatus">Service Status:</string>
+    <string name="label_reconnect">Manual reconnection:</string>
+    <string name="buttonLabel_reconnect">Reconnect</string>
+    
+    <!-- Connected Network -->
+    <string name="wifi_disabled">Wifi is disabled</string>
+    <string name="no_connected_network">No network connected</string>
+    <string name="connected_network"></string>
+    
+    <!-- Service Status -->
+    <string name="service_running">Running</string>
+    <string name="servcie_stopped">Stopped</string>
+    <string name="error_service_running">Service is already running.</string>
+    
     
 </resources>

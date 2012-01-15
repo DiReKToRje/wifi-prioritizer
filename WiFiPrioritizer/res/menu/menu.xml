@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_serviceStart"
+        android:title="@string/menu_serviceStart" />
+    <item android:id="@+id/menu_serviceStop"
+        android:title="@string/menu_serviceStop" />
+    
     <item android:id="@+id/menu_prefsActivity"
         android:title="@string/menu_prefsActivity" />
-
 </menu>

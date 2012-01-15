@@ -5,32 +5,41 @@
     android:orientation="vertical" 
     android:id="@+id/layout" >
 
+    <!-- Connected Network -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/info"
+        android:text="@string/label_connectedNetwork" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/connectedNetwork"
         android:text="" />
     
+    <!-- Service Status -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/availableNetworks" />
+        android:text="@string/label_serviceStatus" />
     
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/configuredNetworks" />
+        android:id="@+id/serviceStatus"
+        android:text="" />
     
+    <!-- Reconnect -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/currentNetwork" />
+        android:text="@string/label_reconnect" />
     
     <Button 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/reconnect"
-        android:id="@+id/reconnectButton"
+        android:text="@string/buttonLabel_reconnect"
+        android:id="@+id/button_reconnect"
         android:onClick="reconnect"/>
 
 </LinearLayout>
