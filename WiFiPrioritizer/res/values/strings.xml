@@ -18,6 +18,9 @@
     <string name="label_reconnect">Manual reconnection:</string>
     <string name="buttonLabel_reconnect">Reconnect</string>
     
+    <!-- Shared Preferences -->
+    <string name="error_no_default_wifi">Please configure default Wifi network.</string>
+    
     <!-- Connected Network -->
     <string name="wifi_disabled">Wifi is disabled</string>
     <string name="no_connected_network">No network connected</string>

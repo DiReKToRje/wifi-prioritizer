@@ -39,8 +39,11 @@ public final class R {
          */
         public static final int app_name=0x7f060000;
         public static final int buttonLabel_reconnect=0x7f060009;
-        public static final int connected_network=0x7f06000c;
-        public static final int error_service_running=0x7f06000f;
+        public static final int connected_network=0x7f06000d;
+        /**  Shared Preferences 
+         */
+        public static final int error_no_default_wifi=0x7f06000a;
+        public static final int error_service_running=0x7f060010;
         /**  Views 
          */
         public static final int label_connectedNetwork=0x7f060006;
@@ -51,18 +54,18 @@ public final class R {
          */
         public static final int menu_serviceStart=0x7f060003;
         public static final int menu_serviceStop=0x7f060004;
-        public static final int no_connected_network=0x7f06000b;
+        public static final int no_connected_network=0x7f06000c;
         public static final int prefsActivityTitle=0x7f060002;
-        public static final int servcie_stopped=0x7f06000e;
+        public static final int servcie_stopped=0x7f06000f;
         /**  Service Status 
          */
-        public static final int service_running=0x7f06000d;
+        public static final int service_running=0x7f06000e;
         /**  Activities titles 
          */
         public static final int wiFiPrioritizerActivityTitle=0x7f060001;
         /**  Connected Network 
          */
-        public static final int wifi_disabled=0x7f06000a;
+        public static final int wifi_disabled=0x7f06000b;
     }
     public static final class xml {
         public static final int prefs=0x7f040000;

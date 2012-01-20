@@ -5,12 +5,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,9 +18,8 @@ import android.widget.Toast;
 
 public class WiFiPrioritizerActivity extends Activity {
 	
-	/* Application shred data */
+	/* Shared Data */
 	WiFiPrioritizerApplication application;
-	SharedPreferences prefs;
 	
 	/* Managers */
 	WifiManager wifiManager;
@@ -39,7 +36,6 @@ public class WiFiPrioritizerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
         application = (WiFiPrioritizerApplication) getApplication();
         
         wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
@@ -104,16 +100,7 @@ public class WiFiPrioritizerActivity extends Activity {
     
     /* Reconnect button onClick */
     public void reconnect(View view) {
-    	updateConnectedNetworkLabel();
-    	application.reconnect();
-    	
-//    	String defaultWifi = prefs.getString(PrefsActivity.DEFAULT_WIFI_PREF_KEY, "null");
-//    	String signalStr = prefs.getString(PrefsActivity.MIN_WIFI_SIGNAL_LEVEL_PREF_KEY, "null");
-//    	String checkInterval = prefs.getString(PrefsActivity.WIFI_CHECK_INTERVAL_PREF_KEY, "null");
-//    	Boolean notifications = prefs.getBoolean(PrefsActivity.RECONNECT_NOTIFICATION_PREF_KEY, false);
-//    	
-//    	Toast toast = Toast.makeText(this, "wifi: "+defaultWifi+", signal: "+signalStr+", interval: "+checkInterval+", notifiacations: "+notifications, Toast.LENGTH_LONG);
-//    	toast.show();
+    	application.checkReconnect();
     }
     
     

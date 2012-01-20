@@ -1,11 +1,8 @@
 package com.gryglicki.android.wifi;
 
-import java.util.List;
-
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -13,9 +10,9 @@ import android.util.Log;
 
 public class WiFiPrioritizerService extends Service {
 
-	/* Application shred data */
-	WiFiPrioritizerApplication application;
-	SharedPreferences prefs;
+	/* Shared data */
+	private WiFiPrioritizerApplication application;
+	private SharedPreferences prefs;
 	
 	/* Managers */
 	WifiManager wifiManager;
@@ -78,32 +75,17 @@ public class WiFiPrioritizerService extends Service {
 			WiFiPrioritizerService service = WiFiPrioritizerService.this;
 			while (service.runFlag) {
 				try {
-					checkReconnect();
+					application.checkReconnect();
 					
 					Log.d("TEST", "Service.trying to reconnect");
-					Thread.sleep(application.getCheckInterval());
+					Thread.sleep(application.getCheckInterval() * 1000);
 				} catch (InterruptedException ie) {
 					service.runFlag = false;
 				}
 			}
 
 		}
-		
-		private void checkReconnect() {
-			if (wifiManager.isWifiEnabled() && (wifiManager.getConnectionInfo().getNetworkId() != application.getDefaultWifiNetworkId())) {
-				List<ScanResult> scanResults = wifiManager.getScanResults();
-				if (scanResults != null) {
-					for (ScanResult sr : scanResults) {
-						if (sr.SSID.equals(application.getDefaultWifiSSID())) {
-							if (sr.level >= application.getMinSignalLevel()) {
-								application.reconnect();
-							}
-							break;
-						} /* SSID found */
-					} /* for each */
-				} /* scanResults != null */
-			}
-		}
+
 		
 	}
 
