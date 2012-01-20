@@ -11,6 +11,7 @@
     <string name="menu_serviceStart">Start Service</string>
     <string name="menu_serviceStop">Stop Service</string>
     <string name="menu_prefsActivity">Preferences</string>
+    <string name="menu_helpActivity">Help</string>
     
     <!-- Views -->
     <string name="label_connectedNetwork">Connected Network:</string>
