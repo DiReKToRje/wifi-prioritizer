@@ -3,34 +3,49 @@
     <!-- Main strings -->
     <string name="app_name">WiFi Prioritizer</string>
     
-    <!-- Activities titles -->
+    <!-- WiFiPrioritizerActivity -->
     <string name="wiFiPrioritizerActivityTitle">WiFi Prioritizer</string>
-    <string name="prefsActivityTitle">Preferences</string>
-
-    <!-- Menu -->
+    <string name="label_defaultNetwork">Default Network</string>
+    <string name="label_connectedNetwork">Connected Network</string>
+    <string name="label_serviceStatus">Service Status</string>
+    <string name="label_reconnect">Manual reconnection</string>
+    <string name="buttonLabel_reconnect">Reconnect</string>
+    
     <string name="menu_serviceStart">Start Service</string>
     <string name="menu_serviceStop">Stop Service</string>
     <string name="menu_prefsActivity">Preferences</string>
-    <string name="menu_helpActivity">Help</string>
+    <string name="menu_helpDialog">Help</string>
     
-    <!-- Views -->
-    <string name="label_connectedNetwork">Connected Network:</string>
-    <string name="label_serviceStatus">Service Status:</string>
-    <string name="label_reconnect">Manual reconnection:</string>
-    <string name="buttonLabel_reconnect">Reconnect</string>
-    
-    <!-- Shared Preferences -->
-    <string name="error_no_default_wifi">Please configure default Wifi network.</string>
-    
-    <!-- Connected Network -->
-    <string name="wifi_disabled">Wifi is disabled</string>
+    <string name="wifi_disabled">Wi-Fi is disabled</string>
     <string name="no_connected_network">No network connected</string>
-    <string name="connected_network"></string>
+    <string name="no_default_network">Default Wi-Fi not configured</string>
     
-    <!-- Service Status -->
     <string name="service_running">Running</string>
     <string name="servcie_stopped">Stopped</string>
     <string name="error_service_running">Service is already running.</string>
     
+    <!-- WiFiPrioritizerPrefsActivity -->
+    <string name="prefsActivityTitle">Preferences</string>
     
+    <string name="error_no_default_wifi">Please configure default Wifi network.</string>
+    <string name="prefsActivity_categoryWiFiSettings">Wi-Fi Settings</string>
+    <string name="prefsActivity_defaultWifiPref_title">Default Wi-Fi Network</string>
+    <string name="prefsActivity_defaultWifiPref_summary">Network of your choice</string>
+    <string name="prefsActivity_minWifiSignalLevelPref_title">Minimal Wi-Fi Signal strength</string>
+    <string name="prefsActivity_minWifiSignalLevelPref_summary">Minimal signal strength of the default network that triggers reconnection</string>
+    <string name="prefsActivity_wifiCheckIntervalPref_title">Wi-Fi check interval</string>
+    <string name="prefsActivity_wifiCheckIntervalPref_summary">Interval between checking available networks, searching for the default one</string>
+    <string name="prefsActivity_categoryNotificationSettings">Notification Settings</string>
+    <string name="prefsActivity_reconnectNotificationPref_title">Notification on reconnect</string>
+    <string name="prefsActivity_reconnectNotificationPref_summary">Vibration notification when reconnects to default network</string>
+    
+    <!-- Help Dialog -->
+    <string name="helpDialog_title">WiFi Prioritizer Help</string>
+    <string name="helpDialog_overviewLabel">1. Overview</string>
+    <string name="helpDialog_overview">WiFi Prioritizer builds a layer of prioritizing your Wi-Fi networks on top of Android built-in Wi-Fi Manager.\nWiFi Prioritizer will keep an eye on available networks around your device and as soon as your default network is available and strong enough it’ll reconnect you to it. For this functionality to work you need to start background Service using menu option.</string>
+    <string name="helpDialog_settingsLabel">2. Settings</string>
+    <string name="helpDialog_settings_defaultWifiPref"><b>Default Wi-Fi network</b> - Network of your choice. It’s probably your home network that you’d like to be connected most often.\nNotice that it has to one of the networks configured as remembered in your Android Wi-Fi Settings.</string>
+    <string name="helpDialog_settings_minWifiSignalLevelPref"><b>Minimal Wi-Fi Signal strength</b> – minimal signal strength of the default network that triggers reconnection.\nChoosing Weak signal will reconnect device as soon as default network is available. Notice that if you reconnect too soon you can lose connection and Android default behavior will again connect you to the strongest remembered network available.\nChoosing Strong signal will reconnect device only when you’ll be close enough to your home router.</string>
+    <string name="helpDialog_settings_wifiCheckIntervalPref"><b>Wi-Fi check interval</b> – how often WiFi Prioritizer will check available networks, searching for your default one.\nChoosing short interval will make your default network available sooner but it’ll drain your battery faster.\nChoosing too long interval will, on the contrary, make your battery live longer but probably won’t satisfy your requirements of this app.\nChoosing 1 – 5 minutes is optimal for me.</string>
+    <string name="helpDialog_settings_reconnectNotificationPref"><b>Notification on reconnect</b> – vibration notification when WiFi Prioritizer reconnects to your default network.</string>
 </resources>

@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <PreferenceCategory android:title="WiFi Settings">
+    <PreferenceCategory android:title="@string/prefsActivity_categoryWiFiSettings">
 	    <ListPreference 
-	        android:title="Default WiFi Network"
-	        android:summary="Allows to select the default WiFi Network that application will try to connect as soon as it is available with propper signal strength"
+	        android:title="@string/prefsActivity_defaultWifiPref_title"
+	        android:summary="@string/prefsActivity_defaultWifiPref_summary"
 	        android:key="defaultWifiPref" />
-	    
 	    <ListPreference 
-	        android:title="Minimal WiFi Signal strength to reconnect"
-	        android:summary="Allows to select the minimal signal strength of the WiFi Network to try to connect"
+	        android:title="@string/prefsActivity_minWifiSignalLevelPref_title"
+	        android:summary="@string/prefsActivity_minWifiSignalLevelPref_summary"
 	        android:key="minWifiSignalLevelPref"
 	        android:defaultValue="-80"
 	        android:entries="@array/minWifiSignalLevelPref_entries"
 	        android:entryValues="@array/minWifiSignalLevelPref_entryValues" />
-	    
 	    <ListPreference 
-	        android:title="WiFi check interval"
-	        android:summary="Check interval of possibility to reconnect (in seconds)"
+	        android:title="@string/prefsActivity_wifiCheckIntervalPref_title"
+	        android:summary="@string/prefsActivity_wifiCheckIntervalPref_summary"
 	        android:key="wifiCheckIntervalPref"
 	        android:defaultValue="60"
 	        android:entries="@array/wifiCheckIntervalPref_entries"
 	        android:entryValues="@array/wifiCheckIntervalPref_entryValues" />
 	</PreferenceCategory>
-	<PreferenceCategory android:title="Notifications Settings">
+	<PreferenceCategory android:title="@string/prefsActivity_categoryNotificationSettings">
 	    <CheckBoxPreference 
-	        android:title="Notification on reconnect"
-	        android:summary="Notification when WiFi Prioritizer reconnects to your default WiFi network"
+	        android:title="@string/prefsActivity_reconnectNotificationPref_title"
+	        android:summary="@string/prefsActivity_reconnectNotificationPref_summary"
 	        android:key="reconnectNotificationPref"
 	        android:defaultValue="false" />
 	</PreferenceCategory>

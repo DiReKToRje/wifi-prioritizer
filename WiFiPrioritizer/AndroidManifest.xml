@@ -24,15 +24,32 @@
         </activity>
         
         <activity
-            android:name=".WiFiPrioritizerActivity"
+            android:name=".WiFiPrioritizerMainActivity"
             android:label="@string/wiFiPrioritizerActivityTitle" >
         </activity>
         
         <activity
-			android:name=".PrefsActivity"
+			android:name=".WiFiPrioritizerPrefsActivity"
             android:label="@string/prefsActivityTitle">
         </activity>
         
-        <service android:name=".WiFiPrioritizerService" />
+        <service android:name=".WiFiPrioritizerActiveService" />
+        
+
+        <!-- Home Widget -->
+        <receiver
+            android:name=".widget.WiFiPrioritizerWidgetProvider"
+            android:label="WiFi Prioritizer Widget"
+            android:icon="@drawable/ic_launcher">
+           <intent-filter>
+               <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+               <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+               <action android:name="com.gryglicki.android.wifi.ACTION_PREFERENCES_CHANGED"/>
+               <action android:name="com.gryglicki.android.wifi.ACTION_SERVICE_STATUS_CHANGED"/>
+           </intent-filter>
+           <meta-data 
+               android:name="android.appwidget.provider"
+               android:resource="@xml/widget_info" />
+        </receiver>
     </application>
 </manifest>

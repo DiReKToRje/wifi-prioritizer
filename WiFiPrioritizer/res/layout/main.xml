@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" 
     android:id="@+id/layout" >
 
+    <!-- Default Network -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_defaultNetwork"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/defaultNetwork"
+        android:text="" 
+        android:layout_marginBottom="10dp"/>
+    
     <!-- Connected Network -->
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_connectedNetwork" />
-    
+        android:text="@string/label_connectedNetwork"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/connectedNetwork"
-        android:text="" />
+        android:text="" 
+        android:layout_marginBottom="10dp"/>
     
     <!-- Service Status -->
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_serviceStatus" />
-    
+        android:text="@string/label_serviceStatus"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/serviceStatus"
-        android:text="" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginBottom="10dp"/>
     
     <!-- Reconnect -->
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_reconnect" />
-    
+        android:text="@string/label_reconnect"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
     <Button 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/buttonLabel_reconnect"
         android:id="@+id/button_reconnect"

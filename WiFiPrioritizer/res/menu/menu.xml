@@ -10,7 +10,7 @@
     <item android:id="@+id/menu_prefsActivity"
         android:icon="@drawable/ic_menu_preferences"
         android:title="@string/menu_prefsActivity" />
-    <item android:id="@+id/menu_helpActivity"
+    <item android:id="@+id/menu_helpDialog"
         android:icon="@drawable/ic_menu_help"
-        android:title="@string/menu_helpActivity"
+        android:title="@string/menu_helpDialog" />
 </menu>
