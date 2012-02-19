@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:scrollbars="vertical"
+	    android:scrollbarAlwaysDrawVerticalTrack="true" >
+	    
+		<TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_overviewLabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_overview"/>
+	    
+	    <View 
+	        android:layout_width="fill_parent"
+	        android:layout_height="0.5dp"
+	        android:background="#FF909090"
+	        android:layout_marginTop="10dp"/>
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_settingsLabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_settings_defaultWifiPref"
+	        android:drawableLeft="@drawable/ic_text_dot"
+	        android:layout_marginTop="10dp" />
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_settings_minWifiSignalLevelPref"
+	        android:drawableLeft="@drawable/ic_text_dot"
+	        android:layout_marginTop="10dp" />
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_settings_wifiCheckIntervalPref"
+	        android:drawableLeft="@drawable/ic_text_dot"
+	        android:layout_marginTop="10dp" />
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpDialog_settings_reconnectNotificationPref"
+	        android:drawableLeft="@drawable/ic_text_dot"
+	        android:layout_marginTop="10dp" />
+	</LinearLayout>
+</ScrollView>
