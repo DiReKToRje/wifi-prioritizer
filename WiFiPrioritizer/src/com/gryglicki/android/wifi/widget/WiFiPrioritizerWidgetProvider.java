@@ -27,10 +27,6 @@ import android.widget.RemoteViews;
 
 import com.gryglicki.android.wifi.R;
 import com.gryglicki.android.wifi.WiFiPrioritizerApplication;
-import com.gryglicki.android.wifi.R.drawable;
-import com.gryglicki.android.wifi.R.id;
-import com.gryglicki.android.wifi.R.layout;
-import com.gryglicki.android.wifi.R.string;
 
 public class WiFiPrioritizerWidgetProvider extends AppWidgetProvider {
 	
@@ -55,7 +51,7 @@ public class WiFiPrioritizerWidgetProvider extends AppWidgetProvider {
 		if (context.getApplicationContext() instanceof WiFiPrioritizerApplication) {
 			WiFiPrioritizerApplication application = (WiFiPrioritizerApplication) context.getApplicationContext();
 		
-			String defaultWifi = (application.getDefaultWifiSSID() != null ? application.getDefaultWifiSSID() : application.getString(R.string.no_default_network));
+			String homeWifi = (application.getHomeWifiSSID() != null ? application.getHomeWifiSSID() : application.getString(R.string.no_home_network));
 			String currentWifi = "";
 			WifiInfo wifiInfo = application.getCurrentWifiInfo();
 			if (wifiInfo != null) {
@@ -69,7 +65,7 @@ public class WiFiPrioritizerWidgetProvider extends AppWidgetProvider {
 			
 			remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 			wifiPrioritizerWidgetName = new ComponentName(context, WiFiPrioritizerWidgetProvider.class);
-			remoteViews.setTextViewText(R.id.widget_defaultWifi, defaultWifi);
+			remoteViews.setTextViewText(R.id.widget_homeWifi, homeWifi);
 			remoteViews.setTextViewText(R.id.widget_currentWifi, currentWifi);
 			if (application.isPrioritizerServiceRunning()) {
 				remoteViews.setImageViewResource(R.id.widget_serviceStatusImg, R.drawable.btn_check_buttonless_on);
@@ -80,7 +76,7 @@ public class WiFiPrioritizerWidgetProvider extends AppWidgetProvider {
 //			Intent intent = new Intent(context, WiFiPrioritizerWidgetProvider.class);
 //			intent.setAction(WiFiPrioritizerApplication.ACTION_RECONNECT);
 //			PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-//			remoteViews.setOnClickPendingIntent(R.id.widget_defaultWifi, pendingIntent);
+//			remoteViews.setOnClickPendingIntent(R.id.widget_homeWifi, pendingIntent);
 
 			appWidgetManager.updateAppWidget(wifiPrioritizerWidgetName, remoteViews);
 		}

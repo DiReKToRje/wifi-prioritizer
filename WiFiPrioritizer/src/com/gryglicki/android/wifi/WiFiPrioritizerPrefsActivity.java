@@ -29,7 +29,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 public class WiFiPrioritizerPrefsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
-	private static final String PREF_DEFAULT_WIFI_KEY = "defaultWifiPref";
+	private static final String PREF_HOME_WIFI_KEY = "homeWifiPref";
 	private static final String PREF_MIN_WIFI_SIGNAL_LEVEL_KEY = "minWifiSignalLevelPref";
 	private static final String PREF_MIN_WIFI_SIGNAL_LEVEL_KEY_DEFAULT_VALUE = "-80";
 	private static final String PREF_WIFI_CHECK_INTERVAL_KEY = "wifiCheckIntervalPref";
@@ -37,8 +37,8 @@ public class WiFiPrioritizerPrefsActivity extends PreferenceActivity implements 
 	private static final String PREF_RECONNECT_NOTIFICATION_KEY = "reconnectNotificationPref";
 	private static final boolean PREF_RECONNECT_NOTIFICATION_KEY_DEFAULT_VALUE = false;
 	
-	public static final String DEFAULT_WIFI_NETWORK_ID_KEY = "defaultWifiNetworkId";
-	public static final String DEFAULT_WIFI_SSID_KEY = "defaultWifiSSID";
+	public static final String HOME_WIFI_NETWORK_ID_KEY = "defaultWifiNetworkId";
+	public static final String HOME_WIFI_SSID_KEY = "defaultWifiSSID";
 	public static final String MIN_WIFI_SIGNAL_LEVEL_KEY = "minWifiSignalLevel";
 	public static final String WIFI_CHECK_INTERVAL_KEY = "wifiCheckInterval";
 	public static final String RECONNECT_NOTIFICATION_KEY = "reconnectNotification";
@@ -51,13 +51,13 @@ public class WiFiPrioritizerPrefsActivity extends PreferenceActivity implements 
 	SharedPreferences prefs;
 	
 	/* View Preferences */
-	ListPreference defaultWifiPref;
+	ListPreference homeWifiPref;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.prefs);
-		defaultWifiPref = (ListPreference) findPreference(PREF_DEFAULT_WIFI_KEY);
+		homeWifiPref = (ListPreference) findPreference(PREF_HOME_WIFI_KEY);
 		
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		
@@ -90,8 +90,8 @@ public class WiFiPrioritizerPrefsActivity extends PreferenceActivity implements 
 			entryValues[i] = Integer.toString(conf.networkId); 
 		}
 		
-		defaultWifiPref.setEntries(entries);
-		defaultWifiPref.setEntryValues(entryValues);
+		homeWifiPref.setEntries(entries);
+		homeWifiPref.setEntryValues(entryValues);
 		
 	}
 	
@@ -112,16 +112,16 @@ public class WiFiPrioritizerPrefsActivity extends PreferenceActivity implements 
 		prefs.unregisterOnSharedPreferenceChangeListener(this);
 		
 		Editor editor;
-		if (key.equals(PREF_DEFAULT_WIFI_KEY)) {
-			Integer defaultWifiNetworkId = Integer.valueOf(sharedPref.getString(PREF_DEFAULT_WIFI_KEY, null));
-			if ((defaultWifiNetworkId != null) && wifiManager.isWifiEnabled()) {
+		if (key.equals(PREF_HOME_WIFI_KEY)) {
+			Integer homeWifiNetworkId = Integer.valueOf(sharedPref.getString(PREF_HOME_WIFI_KEY, null));
+			if ((homeWifiNetworkId != null) && wifiManager.isWifiEnabled()) {
 				List<WifiConfiguration> configuredNetworks = wifiManager.getConfiguredNetworks();
 				if (configuredNetworks != null) {
 					for (WifiConfiguration conf : configuredNetworks) {
-						if (conf.networkId == defaultWifiNetworkId) {
+						if (conf.networkId == homeWifiNetworkId) {
 							editor = sharedPref.edit();
-							editor.putInt(DEFAULT_WIFI_NETWORK_ID_KEY, defaultWifiNetworkId);
-							editor.putString(DEFAULT_WIFI_SSID_KEY, extractProperSSID(conf.SSID));
+							editor.putInt(HOME_WIFI_NETWORK_ID_KEY, homeWifiNetworkId);
+							editor.putString(HOME_WIFI_SSID_KEY, extractProperSSID(conf.SSID));
 							editor.commit();
 							break;
 						}

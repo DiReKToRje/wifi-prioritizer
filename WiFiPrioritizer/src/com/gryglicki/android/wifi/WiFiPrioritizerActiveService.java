@@ -67,7 +67,6 @@ public class WiFiPrioritizerActiveService extends Service {
 	}
 
 	
-	
 	/* Working Thread class */
 	private class PrioritizerThread extends Thread {
 		public PrioritizerThread() {
@@ -81,7 +80,7 @@ public class WiFiPrioritizerActiveService extends Service {
 				try {
 					application.checkReconnect();
 					
-					Thread.sleep(application.getCheckInterval() * 1000);
+					Thread.sleep(application.getCheckIntervalInSeconds() * 1000);
 				} catch (InterruptedException ie) {
 					service.runFlag = false;
 				}

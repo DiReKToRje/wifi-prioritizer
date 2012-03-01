@@ -2,9 +2,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <PreferenceCategory android:title="@string/prefsActivity_categoryWiFiSettings">
 	    <ListPreference 
-	        android:title="@string/prefsActivity_defaultWifiPref_title"
-	        android:summary="@string/prefsActivity_defaultWifiPref_summary"
-	        android:key="defaultWifiPref" />
+	        android:title="@string/prefsActivity_homeWifiPref_title"
+	        android:summary="@string/prefsActivity_homeWifiPref_summary"
+	        android:key="homeWifiPref" />
 	    <ListPreference 
 	        android:title="@string/prefsActivity_minWifiSignalLevelPref_title"
 	        android:summary="@string/prefsActivity_minWifiSignalLevelPref_summary"

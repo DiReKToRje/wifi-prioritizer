@@ -5,17 +5,17 @@
     android:orientation="vertical" 
     android:id="@+id/layout" >
 
-    <!-- Default Network -->
+    <!-- Home Network -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_defaultNetwork"
+        android:text="@string/label_homeNetwork"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/defaultNetwork"
+        android:id="@+id/homeNetwork"
         android:text="" 
         android:layout_marginBottom="10dp"/>
     

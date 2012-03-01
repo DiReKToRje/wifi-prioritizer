@@ -33,7 +33,7 @@ public final class R {
     public static final class id {
         public static final int button_reconnect=0x7f080004;
         public static final int connectedNetwork=0x7f080002;
-        public static final int defaultNetwork=0x7f080001;
+        public static final int homeNetwork=0x7f080001;
         public static final int layout=0x7f080000;
         public static final int menu_helpDialog=0x7f08000d;
         public static final int menu_prefsActivity=0x7f08000c;
@@ -41,7 +41,7 @@ public final class R {
         public static final int menu_serviceStop=0x7f08000b;
         public static final int serviceStatus=0x7f080003;
         public static final int widget_currentWifi=0x7f080008;
-        public static final int widget_defaultWifi=0x7f080007;
+        public static final int widget_homeWifi=0x7f080007;
         public static final int widget_layout=0x7f080005;
         public static final int widget_linear_layout=0x7f080006;
         public static final int widget_serviceStatusImg=0x7f080009;
@@ -59,20 +59,24 @@ public final class R {
          */
         public static final int app_name=0x7f060000;
         public static final int buttonLabel_reconnect=0x7f060006;
-        public static final int error_no_default_wifi=0x7f060012;
+        public static final int error_no_home_wifi=0x7f060012;
         public static final int error_service_running=0x7f060010;
+        public static final int helpDialog_howToSetup=0x7f060021;
+        public static final int helpDialog_howToSetupLabel=0x7f060020;
         public static final int helpDialog_overview=0x7f06001f;
         public static final int helpDialog_overviewLabel=0x7f06001e;
-        public static final int helpDialog_settingsLabel=0x7f060020;
-        public static final int helpDialog_settings_defaultWifiPref=0x7f060021;
-        public static final int helpDialog_settings_minWifiSignalLevelPref=0x7f060022;
-        public static final int helpDialog_settings_reconnectNotificationPref=0x7f060024;
-        public static final int helpDialog_settings_wifiCheckIntervalPref=0x7f060023;
+        public static final int helpDialog_settingsLabel=0x7f060022;
+        public static final int helpDialog_settings_homeWifiPref=0x7f060023;
+        public static final int helpDialog_settings_minWifiSignalLevelPref=0x7f060024;
+        public static final int helpDialog_settings_reconnectNotificationPref=0x7f060026;
+        public static final int helpDialog_settings_wifiCheckIntervalPref=0x7f060025;
         /**  Help Dialog 
          */
         public static final int helpDialog_title=0x7f06001d;
+        public static final int helpDialog_widget=0x7f060028;
+        public static final int helpDialog_widgetLabel=0x7f060027;
         public static final int label_connectedNetwork=0x7f060003;
-        public static final int label_defaultNetwork=0x7f060002;
+        public static final int label_homeNetwork=0x7f060002;
         public static final int label_reconnect=0x7f060005;
         public static final int label_serviceStatus=0x7f060004;
         public static final int menu_helpDialog=0x7f06000a;
@@ -80,14 +84,14 @@ public final class R {
         public static final int menu_serviceStart=0x7f060007;
         public static final int menu_serviceStop=0x7f060008;
         public static final int no_connected_network=0x7f06000c;
-        public static final int no_default_network=0x7f06000d;
+        public static final int no_home_network=0x7f06000d;
         /**  WiFiPrioritizerPrefsActivity 
          */
         public static final int prefsActivityTitle=0x7f060011;
         public static final int prefsActivity_categoryNotificationSettings=0x7f06001a;
         public static final int prefsActivity_categoryWiFiSettings=0x7f060013;
-        public static final int prefsActivity_defaultWifiPref_summary=0x7f060015;
-        public static final int prefsActivity_defaultWifiPref_title=0x7f060014;
+        public static final int prefsActivity_homeWifiPref_summary=0x7f060015;
+        public static final int prefsActivity_homeWifiPref_title=0x7f060014;
         public static final int prefsActivity_minWifiSignalLevelPref_summary=0x7f060017;
         public static final int prefsActivity_minWifiSignalLevelPref_title=0x7f060016;
         public static final int prefsActivity_reconnectNotificationPref_summary=0x7f06001c;

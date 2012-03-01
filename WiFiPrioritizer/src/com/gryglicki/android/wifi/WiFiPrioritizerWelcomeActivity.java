@@ -30,11 +30,11 @@ public class WiFiPrioritizerWelcomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		
-		if (prefs.contains(WiFiPrioritizerPrefsActivity.DEFAULT_WIFI_NETWORK_ID_KEY) && prefs.contains(WiFiPrioritizerPrefsActivity.DEFAULT_WIFI_SSID_KEY)) {
+		if (prefs.contains(WiFiPrioritizerPrefsActivity.HOME_WIFI_NETWORK_ID_KEY) && prefs.contains(WiFiPrioritizerPrefsActivity.HOME_WIFI_SSID_KEY)) {
 			startActivity(new Intent(this, WiFiPrioritizerMainActivity.class));
 		} else {
 			startActivity(new Intent(this, WiFiPrioritizerPrefsActivity.class));
-			Toast.makeText(this, getString(R.string.error_no_default_wifi), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getString(R.string.error_no_home_wifi), Toast.LENGTH_LONG).show();
 		}
 		finish();
 	}

@@ -28,7 +28,6 @@ import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class WiFiPrioritizerApplication extends Application {
 	public static final String ACTION_SERVICE_STATUS_CHANGED = "com.gryglicki.android.wifi.ACTION_SERVICE_STATUS_CHANGED";
@@ -42,11 +41,11 @@ public class WiFiPrioritizerApplication extends Application {
 	private boolean prioritizerServiceRunning;
 	
 	/* SharedPreferences cache */
-	private int defaultWifiNetworkId;
-	private String defaultWifiSSID;
+	private int homeWifiNetworkId;
+	private String homeWifiSSID;
 	private int minWifiSignalLevel;
 	private boolean reconnectNotifications;
-	private int wifiCheckInterval;
+	private int wifiCheckIntervalInSeconds;
 	
 	@Override
 	public void onCreate() {
@@ -58,22 +57,20 @@ public class WiFiPrioritizerApplication extends Application {
 	
 	public synchronized void invalidateSharedPreferences() {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		defaultWifiNetworkId = prefs.getInt(WiFiPrioritizerPrefsActivity.DEFAULT_WIFI_NETWORK_ID_KEY, -1);
-		defaultWifiSSID = prefs.getString(WiFiPrioritizerPrefsActivity.DEFAULT_WIFI_SSID_KEY, null);
+		homeWifiNetworkId = prefs.getInt(WiFiPrioritizerPrefsActivity.HOME_WIFI_NETWORK_ID_KEY, -1);
+		homeWifiSSID = prefs.getString(WiFiPrioritizerPrefsActivity.HOME_WIFI_SSID_KEY, null);
 		minWifiSignalLevel =  prefs.getInt(WiFiPrioritizerPrefsActivity.MIN_WIFI_SIGNAL_LEVEL_KEY, 0);
 		reconnectNotifications = prefs.getBoolean(WiFiPrioritizerPrefsActivity.RECONNECT_NOTIFICATION_KEY, false);
-		wifiCheckInterval = prefs.getInt(WiFiPrioritizerPrefsActivity.WIFI_CHECK_INTERVAL_KEY, 60);
+		wifiCheckIntervalInSeconds = prefs.getInt(WiFiPrioritizerPrefsActivity.WIFI_CHECK_INTERVAL_KEY, 60);
 		sendBroadcast(new Intent(ACTION_PREFERENCES_CHANGED));
 	}
 	
 	public synchronized void checkReconnect() {
-		Log.d("TEST", "Application.checkReconnect()");
-
-		if (wifiManager.isWifiEnabled() && (wifiManager.getConnectionInfo() != null) && (wifiManager.getConnectionInfo().getNetworkId() != defaultWifiNetworkId)) {
+		if (wifiManager.isWifiEnabled() && (wifiManager.getConnectionInfo() != null) && (wifiManager.getConnectionInfo().getNetworkId() != homeWifiNetworkId)) {
 			List<ScanResult> scanResults = wifiManager.getScanResults();
 			if (scanResults != null) {
 				for (ScanResult sr : scanResults) {
-					if (sr.SSID.equals(defaultWifiSSID)) {
+					if (sr.SSID.equals(homeWifiSSID)) {
 						if (sr.level >= minWifiSignalLevel) {
 							reconnect();
 						}
@@ -86,9 +83,7 @@ public class WiFiPrioritizerApplication extends Application {
 	
 	
 	private void reconnect() {
-		Log.d("TEST", "Application.reconnect()");
-		
-		wifiManager.enableNetwork(defaultWifiNetworkId, true);
+		wifiManager.enableNetwork(homeWifiNetworkId, true);
 		if (reconnectNotifications) {
 			Notification reconnectedNotification = new Notification();
 			reconnectedNotification.vibrate = new long[] {100, 100, 100, 500};
@@ -106,12 +101,12 @@ public class WiFiPrioritizerApplication extends Application {
 		sendBroadcast(new Intent(ACTION_SERVICE_STATUS_CHANGED));
 	}
 	
-	public int getCheckInterval() {
-		return wifiCheckInterval;
+	public int getCheckIntervalInSeconds() {
+		return wifiCheckIntervalInSeconds;
 	}
 
-	public String getDefaultWifiSSID() {
-		return defaultWifiSSID;
+	public String getHomeWifiSSID() {
+		return homeWifiSSID;
 	}
 	
 	public WifiInfo getCurrentWifiInfo() {

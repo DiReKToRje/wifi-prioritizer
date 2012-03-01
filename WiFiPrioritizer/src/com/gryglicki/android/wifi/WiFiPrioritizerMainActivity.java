@@ -47,7 +47,7 @@ public class WiFiPrioritizerMainActivity extends Activity {
 	IntentFilter broadcastFilter;
 	
 	/* Views */
-	TextView defaultNetwork;
+	TextView homeNetwork;
 	TextView connectedNetwork;
 	TextView serviceStatus;
 	
@@ -77,7 +77,7 @@ public class WiFiPrioritizerMainActivity extends Activity {
 			}
 		};
 		
-		defaultNetwork = (TextView) findViewById(R.id.defaultNetwork);
+		homeNetwork = (TextView) findViewById(R.id.homeNetwork);
 		connectedNetwork = (TextView) findViewById(R.id.connectedNetwork);
 		serviceStatus = (TextView) findViewById(R.id.serviceStatus);
     }
@@ -97,7 +97,7 @@ public class WiFiPrioritizerMainActivity extends Activity {
     }
     
     private void updateDefaultNetworkLabel() {
-    	defaultNetwork.setText(application.getDefaultWifiSSID() != null ? application.getDefaultWifiSSID() : application.getString(R.string.no_default_network));
+    	homeNetwork.setText(application.getHomeWifiSSID() != null ? application.getHomeWifiSSID() : application.getString(R.string.no_home_network));
     }
     
     private void updateConnectedNetworkLabel() {
