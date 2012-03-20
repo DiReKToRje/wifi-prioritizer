@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gryglicki.android.wifi"
+    package="com.gryglicki.android.wifiprioritizer"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,7 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" 
-        android:name=".WiFiPrioritizerApplication">
+        android:name="com.gryglicki.android.wifiprioritizer.WiFiPrioritizerApplication">
         <activity
             android:name=".WiFiPrioritizerWelcomeActivity">
             <intent-filter>
@@ -29,23 +29,23 @@
         </activity>
         
         <activity
-			android:name=".WiFiPrioritizerPrefsActivity"
+			android:name="com.gryglicki.android.wifiprioritizer.WiFiPrioritizerPrefsActivity"
             android:label="@string/prefsActivityTitle">
         </activity>
         
-        <service android:name=".WiFiPrioritizerActiveService" />
+        <service android:name="com.gryglicki.android.wifiprioritizer.WiFiPrioritizerActiveService" />
         
 
         <!-- Home Widget -->
         <receiver
-            android:name=".widget.WiFiPrioritizerWidgetProvider"
+            android:name="com.gryglicki.android.wifiprioritizer.widget.WiFiPrioritizerWidgetProvider"
             android:label="WiFi Prioritizer Widget"
             android:icon="@drawable/ic_launcher">
            <intent-filter>
                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-               <action android:name="com.gryglicki.android.wifi.ACTION_PREFERENCES_CHANGED"/>
-               <action android:name="com.gryglicki.android.wifi.ACTION_SERVICE_STATUS_CHANGED"/>
+               <action android:name="com.gryglicki.android.wifiprioritizer.ACTION_PREFERENCES_CHANGED"/>
+               <action android:name="com.gryglicki.android.wifiprioritizer.ACTION_SERVICE_STATUS_CHANGED"/>
            </intent-filter>
            <meta-data 
                android:name="android.appwidget.provider"

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gryglicki.android.wifi;
+package com.gryglicki.android.wifiprioritizer;
 
 import android.app.Activity;
 import android.app.Dialog;

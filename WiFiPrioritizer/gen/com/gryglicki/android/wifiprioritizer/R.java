@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.gryglicki.android.wifi;
+package com.gryglicki.android.wifiprioritizer;
 
 public final class R {
     public static final class array {

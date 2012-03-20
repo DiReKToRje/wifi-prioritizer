@@ -14,7 +14,7 @@
 		    android:layout_alignParentLeft="true"
 		    android:gravity="center_vertical"
 		    android:layout_marginRight="40dp"
-		    android:orientation="vertical">
+		    android:orientation="horizontal">
 		    
                 <TextView
 			        android:id="@+id/widget_homeWifi"
@@ -23,6 +23,7 @@
 			        android:layout_height="wrap_content"
 			        android:drawableLeft="@drawable/ic_menu_home"
 			        android:gravity="center_vertical"
+			        android:layout_weight="5"
 			        android:text="Home Wi-Fi SSID" />
 			    
 			    <TextView 
@@ -32,6 +33,7 @@
 			        android:layout_height="wrap_content"
 			        android:gravity="center_vertical"
 			        android:text="Current Wi-Fi SSID"
+			        android:layout_weight="5"
 			        android:drawableLeft="@drawable/ic_menu_mark" />
 		</LinearLayout>
         

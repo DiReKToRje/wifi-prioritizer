@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gryglicki.android.wifi.widget;
+package com.gryglicki.android.wifiprioritizer.widget;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -25,8 +25,8 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiInfo;
 import android.widget.RemoteViews;
 
-import com.gryglicki.android.wifi.R;
-import com.gryglicki.android.wifi.WiFiPrioritizerApplication;
+import com.gryglicki.android.wifiprioritizer.R;
+import com.gryglicki.android.wifiprioritizer.WiFiPrioritizerApplication;
 
 public class WiFiPrioritizerWidgetProvider extends AppWidgetProvider {
 	

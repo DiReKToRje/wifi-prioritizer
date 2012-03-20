@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gryglicki.android.wifi;
+package com.gryglicki.android.wifiprioritizer;
 
 import java.util.List;
 
@@ -30,8 +30,8 @@ import android.net.wifi.WifiManager;
 import android.preference.PreferenceManager;
 
 public class WiFiPrioritizerApplication extends Application {
-	public static final String ACTION_SERVICE_STATUS_CHANGED = "com.gryglicki.android.wifi.ACTION_SERVICE_STATUS_CHANGED";
-	public static final String ACTION_PREFERENCES_CHANGED = "com.gryglicki.android.wifi.ACTION_PREFERENCES_CHANGED";
+	public static final String ACTION_SERVICE_STATUS_CHANGED = "com.gryglicki.android.wifiprioritizer.ACTION_SERVICE_STATUS_CHANGED";
+	public static final String ACTION_PREFERENCES_CHANGED = "com.gryglicki.android.wifiprioritizer.ACTION_PREFERENCES_CHANGED";
 	
 	/* Managers */
 	private WifiManager wifiManager;
